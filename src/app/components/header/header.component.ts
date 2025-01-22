@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -33,6 +34,13 @@ export class HeaderComponent implements OnInit {
     } else {
       document.documentElement.classList.remove('dark');
     }
+  }
+
+
+  isSidebarOpen: boolean = false;
+
+  toggleSidebar(): void {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 
 }
