@@ -9,5 +9,5 @@ import { HeaderComponent } from "../header/header.component";
   styleUrl: './sidebar-left.component.css'
 })
 export class SidebarLeftComponent {
-  
+
 }
