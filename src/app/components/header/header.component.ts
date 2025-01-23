@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { SidebarService } from '../../services/sidebar-service/sidebar.service';
+
+@Injectable({
+  providedIn: 'root',
+})
 
 @Component({
   selector: 'app-header',
@@ -37,10 +42,23 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  isSidebarOpen: boolean = false;
+  private isSidebarOpen = false;
+
+
+  getSidebarState(): boolean {
+    return this.isSidebarOpen;
+  }
+
+  closeSidebar(): void {
+    this.isSidebarOpen = false;
+  }
+
+
+  constructor(private sidebarService: SidebarService) {}
 
   toggleSidebar(): void {
-    this.isSidebarOpen = !this.isSidebarOpen;
+    this.sidebarService.toggleSidebar();
   }
+
 
 }
