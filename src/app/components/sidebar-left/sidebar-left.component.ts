@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { MainComponent } from "../main/main.component";
 import { HeaderComponent } from "../header/header.component";
 import { SidebarService } from '../../services/sidebar-service/sidebar.service';
 
 @Component({
   selector: 'app-sidebar-left',
-  imports: [MainComponent, HeaderComponent],
+  imports: [ HeaderComponent],
   templateUrl: './sidebar-left.component.html',
   styleUrl: './sidebar-left.component.css'
 })
